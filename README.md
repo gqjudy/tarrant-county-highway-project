@@ -11,6 +11,10 @@ This project consisted of attempting to grok through 6 different US Census Burea
 
 I'm not a journalist and have never claimed to be. I'm simply a life-long fan of journalism and, by extension, journalists. I underestimated how hard writing something reasonable painless to read is. And it uses such a different part of my brain. As I started writing this it became clear that my approach and tone was not going to be typically journalistic. I think it reads more 'journal' than journalism, and more stream-of-consciousness than anything investigative. I decided to embrace that because this project did originate from something personal and the idea of nostalgia is part of it. So, I rolled with it.
 
+## Use of AI
+
+I want to explicit that I did use AI in some of the pandas coding around isolate the right columns. I didn't want to and didn't seek it out but google presents its AI answers/suggestions at the top of browser results and I even gave it and did click there. I think that's "Gemini"? Even with AI help, because AI is both imperfect and somehow favors writing more complicated code, I still had a lot of work to do and feel that I did do a lot on my own. But AI helped and I don't think I could have finished without it.
+
 ## If I Had More Time
 
 Woulda, shoulda, coulda's. If I had more time, I think it would make sense to include some imagery from 1990s Arlington. I also would have rethought my map visual. I think it's 'fine' but I think something more interesting and creative could have been done. I simply ran out of steam and time.
