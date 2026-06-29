@@ -1,2 +1,8 @@
-# tarrant-county-highway-project
+# Tarrant County Highway Project
 Project 1 for LEDE
+
+What to say about this project??? I want to first say that I will go back and edit this but right now, at 8:31 AM CST on the Monday after the Sunday when this project was technically "due", I just want to quickly jot down some initial thoughts. 
+
+##Census Data
+
+This project consisted of attempting to grok through 6 different US Census Bureau spreadsheets. I am both amazed and highly annoyed at the way these Excel spreadsheets are put together. What a pain in the ass. I spent an exorbinant amount of time trying to just figure out how to isoalate the right rows via deleting the header and getting columns to be read correctly by pandas. Such a pain. Did I learn? Maybe. Maybe I learned something through the painful process, but right now, I just hope to never look another Census Bureau spreadsheet. I also want to not do another project that will necessitate look at another such spreadsheet.
