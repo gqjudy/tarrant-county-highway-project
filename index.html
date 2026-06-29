@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Story template</title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
+    <style>
+        body {
+            margin: 0;
+            font-size: 16px;
+            font-family: "Roboto", sans-serif;
+            font-weight: 400;
+            text-rendering: optimizeLegibility;
+            background-color: #fafafa;
+            overflow-x: hidden;
+        }
+
+
+        .full-width-container {
+            width: 100vw;
+            position: relative;
+            left: 50%;
+            right: 50%;
+            margin-left: -50vw;
+            margin-right: -50vw;
+            margin-top: 2em;
+            margin-bottom: 2em;
+        }
+
+        .full-width-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .header {
+            padding: 3em 0 1em 0;
+        }
+
+
+        .section-headings {
+            font-family: 'Lora', Georgia, serif;
+            font-weight: bold;
+            font-style: italic;
+            font-size: 24px;
+            margin-top: 30px;
+
+        }
+
+        h1 {
+            font-family: 'Lora', Georgia, serif;
+            font-weight: bold;
+            font-size: 3em;
+            line-height: 1.1;
+            margin-bottom: 0.5em;
+        }
+
+        .subhead {
+            font-family: 'Lora', Georgia, serif;
+            color: #555;
+            font-size: 1.1rem;
+            padding-bottom: 0px;
+        }
+
+        .byline {
+            font-size: 0.9rem;
+        }
+
+        a {
+            color: #f05349;
+        }
+
+        p {
+            line-height: 1.5;
+            margin: 0;
+            padding-bottom: 1.2em;
+        }
+
+        blockquote {
+            font-family: 'Lora', Georgia, serif;
+            font-style: italic;
+            font-size: 18px;
+            max-width: 600px;
+            text-align: left;
+            margin: 0 auto;
+            line-height: 1.5em;
+            margin-bottom: 50px;
+        }
+
+        iframe,
+        video {
+            max-width: 100%;
+            margin-top: 40px;
+            margin-bottom: 40px;
+        }
+
+        #scrolly-container {
+            position: relative;
+            width: 100%;
+            max-width: 1000px;
+            margin: 30px;
+            display: flex;
+            gap: 40px;
+        }
+
+        article {
+            position: relative;
+            width: 35%;
+            min-width: 320px;
+            z-index: 10;
+        }
+
+        .step {
+            margin-bottom: 75vh;
+            background-color: #ffffff;
+            color: #222222;
+            border: 1px solid #dddddd;
+            border-radius: 6px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            opacity: 0.4;
+            transition: all 0.4s ease;
+        }
+
+        .step:last-child {
+            margin-bottom: 30vh;
+        }
+
+        .step.is-active {
+            background-color: #ffffff;
+            border-color: #f05349;
+            color: #222222;
+            opacity: 1;
+            transform: scale(1.03);
+        }
+
+        .step p {
+            text-align: center;
+            padding: 3rem 1.5rem;
+            font-size: 16px;
+            margin: 0;
+            font-weight: bold;
+        }
+
+
+        /* Image Gallery Caption Style (Overlay) */
+        .image-column figcaption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(254, 254, 254, 0.92);
+            padding: 10px 14px;
+            box-sizing: border-box;
+            font-family: 'Lora', Georgia, serif;
+            color: #444;
+            font-size: 1rem;
+            line-height: 1.3;
+            z-index: 10;
+            border-top: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        #scrolly-container figure {
+            position: -webkit-sticky;
+            position: sticky;
+            top: 0;
+            align-self: flex-start;
+            width: 60%;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+            border-radius: 8px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .scrolly-img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100% !important;
+            height: 100% !important;
+            object-fit: contain;
+            background-color: #fafafa;
+            display: none;
+            transition: opacity 0.3s ease-in-out;
+            border-radius: 8px;
+        }
+
+        .scrolly-img.show-image {
+            display: block !important;
+            opacity: 1 !important;
+            z-index: 5;
+        }
+
+        #outro {
+            margin-top: 3em;
+            padding: 2em 0;
+            background-color: #f05349;
+            width: 100%;
+        }
+
+        .outro-div {
+            max-width: 100%;
+            background-color: #f05349;
+
+
+
+        }
+
+        figcaption {
+            font-family: 'Lora', Georgia, serif;
+            color: #555;
+            font-size: 1.1rem;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="content">
+        <div class="header">
+            <h1>A Boom in Texas Growth Led to a Commitment of 6 Years and 2 Billion Dollars to a Highway project in
+                Tarrant County (So Far)
+            </h1>
+            <p class="subhead">A nostalgic look back at Arlington, TX and some specific examinations of an enormous
+                highway
+                infrastructure project.</p>
+        </div>
+        <div class="byline">
+            <p>By <a href="https://judybuilds.com">Judy Siegel</a></p>
+        </div>
+
+
+        <div class="section-headings">
+            <p>I: Growing Up in Arlington</p>
+        </div>
+
+        <p>I grew up in the fairly unremarkable suburb of Arlington, TX. I say that not with disdain but actually with
+            pride--Arlington was a great place to grow up and I look back at my adolescence with a lot of nostalgia. And
+            only a bit of horror. Arlington back then was a suburb but wasn't really a suburb of Dallas or Fort Worth.
+            It wasn't similar at all to either and also had an amount of population (about 250,000 back then) that
+            almost made the word suburban a
+            misnomer. At least to me. It was a city, just a pretty boring one. It had a cultural district and a downtown
+            that few would intentionally seek out. The main attractions were the Parks Mall, Six Flags Over Texas and
+            Hurricane Harbor. But being a teenager in Arlington was awesome. I spent hundreds of hours at the Parks
+            Mall, spending my hard-earned teenager money at the long-defunct Wet Seal and of course in the food court,
+            eating
+            copious amounts of bourbon chicken at Famous Cajun Grill.
+        </p>
+
+        <p>While I've visiting Arlington dozens of time since completely leaving in the early 2000s, my visits were
+            usually constrained to the 2 mile or so radius directly surrounding my parents' house. This was the house I
+            grew up in. It was beyond familiar. Most visits were boring; each visit would bring new stories of
+            businesses closing and new ones opening. The small but steady changes in roads and new housing developments
+            were obvious but never jarring--southwest Arlington, where I grew up, was always growing but the growth felt
+            steady and manageable.
+        </p>
+
+
+        <p>Something changed maybe 8 or 9 years ago. Or perhaps I just started paying more attention. Regardless of what
+            the catalyst was in terms of my own awareness, I was definitely made more aware the landscape was changing
+            at an increasing rate. By that I mean the literal landscape--while driving, I saw more treeless, freshly
+            leveled patches of clay-colored land for new building and housing developments. I was stuck in and saw more
+            giants knots of traffic jams. I felt more overall anxiety while driving. But what struck me most visually
+            was the highways construction. The Dallas-Fort Worth Metroplex is marked by highways and on-ramps and
+            interchnages everywhere. The very large ones even go by their own name--a "mixmaster" refers to the web of
+            on-ramps and off-ramps of massive highway exchanges in the Metroplex.
+        </p>
+
+
+
+        <div class="section-headings">
+            <p>II: More Ramps & Dirt</p>
+        </div>
+        <p>The Dallas-Fort Worth Metroplex has always had highway projects. But there are several happening right now
+            that are massive, billion-dollar multi-year projects that literally affect anyone who has to drive anywhere
+            close to a highway. Of particular note is the project going on in Fort Worth, entering Arlington,
+            specifically entering Arlington in the Southwest quadrant, where I'm from as I've explained earlier.</p>
+
+        <p>The Southeast Connector project is a highway expansion project that will affect 16 miles of highways within
+            Tarrant County, stretching from central Fort Worth through southwest Arlington and then into parts of Forest
+            Hill and Kennedale. It started in 2022 and is estimated to finish in 2028. It affects 3 major highways in
+            the greater Fort Worth area--I-20, I-820 and US 287. The project is part of the Texas Clean Lanes Initiative
+            with the stated goal of "address[ing] congestion, safety and mobility in the area," according to the Texas
+            Department of Transportation. The Southeast Connector project will add lanes to all the noted interstates as
+            well as frontage roads. The budget for this project is approximately 2.2 billion dollars.
+        </p>
+
+        <p>
+        <blockquote
+            cite="https://www.facebook.com/61582422144183/posts/fort-worth-is-officially-in-the-middle-of-a-massive-infrastructure-era-if-your-c/122122702281080738">
+            "They are completely rebuilding the spaghetti bowl where I-20, I-820, and highway 287 all crash into each
+            other... expect nightly closures where you're just dumped onto the frontage road. It's an absolute giant."
+            <cite><a
+                    href="https://www.facebook.com/61582422144183/posts/fort-worth-is-officially-in-the-middle-of-a-massive-infrastructure-era-if-your-c/122122702281080738">Tarrant
+                    Infrastructure Dispatch Facebook Group</a></cite>
+
+        </blockquote>
+        </p>
+
+        <p>
+            While I left Arlington over 20 years and have just been a visitor since (and a sometimes fan), life handed
+            me some lemons and I decided to make figurative lemonade in Arlington, moving back in the summer of 2026 for
+            the rest of that year, intending to use the time to regroup, heal and chart my next path. But enough of
+            that. Back to highways.
+        </p>
+
+        <p>
+            My mother had vaguely mentioned to me that "there's a lot of construction near the house" and that she hated
+            driving on highways. But without seeing anything in person, I couldn't appreciate what "construction" truly
+            meant in terms of a day-to-day commute, or what driving on the highway was now compared to how it was
+            before. I didn't have any experience of the Southeast Connector project because I didn't live in the
+            Dallas-Fort Worth Metroplex anymore. Once I moved back, I quickly experience the immense highway project it
+            was because it affected my commute directly from Fort Worth, where I was staying with a college friend, to
+            Arlington, where my mother and brothers still lived. The Southeast Connector project was no longer
+            theoretical, something I read about online via TXDoT report or Fort Worth Star-Telegram articles. It was a
+            massive imposition on a trip I undertook several times a week. And frankly, it make the journey feel scarier
+            at times, depending on time of day of my trip.
+        </p>
+
+        <p>
+            Every time I would drive from Fort Worth to Arlington and then back again, I would think to myself that
+            while I knew the area was growing, hundreds of thousands of people had moved to Texas in the past decade as
+            demonstated by rising property values, etc., that I really had no idea where these new residents of Texas
+            were coming from. "California" was the answer most of my friends and people in my network would relate. That
+            was a reasonable assumption. But I became incredibly curious about <span
+                style="text-decoration: underline;text-decoration-color: #f05349;">the where</span> behind all of this
+            population growth.
+        </p>
+
+        <p>
+            I started thinking back to my visits to Arlington, specifically what the highway, 287 merging into the I-20
+            exchange, looked over the past few years when driving from Fort Worth to Arlington. Using Google Earth
+            satellite imagery, I pulled several historical
+            screen captures, attempting to illustrate how the part of highway has evolved over just the past 7 years.
+        </p>
+
+
+        <!-- Scrolly Section -->
+        <main id="scrolly-container">
+            <article>
+                <div class="step" data-step="1">
+                    <p>2019: I-20 & 287. While this highway was different from the Arlington highway of my youth, it
+                        looks fairly straightforward. There is no construction.</p>
+                </div>
+                <div class="step" data-step="2">
+                    <p>2022: The Southeast Connector has officially kicked off, though nothing remarkable can be seen in
+                        this image.</p>
+                </div>
+                <div class="step" data-step="3">
+                    <p>2023: Phase 1 overpass routing is starting to become visible.</p>
+                </div>
+                <div class="step" data-step="4">
+                    <p>2023 Update: Later in 2023, central bottlenecks identified in the Southeast Connector proposal
+                        are starting to be addressed.</p>
+                </div>
+                <div class="step" data-step="5">
+                    <p>2024: There are structural bridge layouts starting to take shape.</p>
+                </div>
+                <div class="step" data-step="6">
+                    <p>2025: More construction is visible via concrete stacking.</p>
+                </div>
+                <div class="step" data-step="7">
+                    <p>2025 Update: Later in 2025, auxillary lanes are added.</p>
+                </div>
+                <div class="step" data-step="8">
+                    <p>2026: Construction continues. More on-ramps are visible.</p>
+                </div>
+            </article>
+
+            <figure>
+                <img src="images/highway-project-2019.jpg" class="scrolly-img img-1 show-image"
+                    alt="2019 project foundations">
+                <img src="images/highway-project-2022.jpg" class="scrolly-img img-2" alt="2022 expansion begins">
+                <img src="images/highway-project-2023.jpg" class="scrolly-img img-3" alt="2023 phase 1 overpass">
+                <img src="images/highway-project-2023-2.jpg" class="scrolly-img img-4" alt="2023 central bottlenecks">
+                <img src="images/highway-project-2024.jpg" class="scrolly-img img-5" alt="2024 bridge layouts">
+                <img src="images/highway-project-2025.jpg" class="scrolly-img img-6" alt="2025 concrete stacking">
+                <img src="images/highway-project-2025-2.jpg" class="scrolly-img img-7" alt="2025 auxiliary lanes">
+                <img src="images/highway-project-2026.jpg" class="scrolly-img img-8" alt="2026 final integration">
+            </figure>
+        </main>
+
+
+        <div class="section-headings">
+            <p>III: Census Data and Texas Migration Inflows</p>
+        </div>
+
+
+        <p>
+            The overwhelming question that came to mind when considering all of this is "Where are people coming from?".
+            It was clear that people, many people, perhaps millions of people had relocated to Texas. I wasn't even
+            considering the "why" that is often cited like cheaper cost of living, more jobs, no state income tax,
+            better economy. I was fixated on a more foundational question -- where are these people from? Or put more
+            professionally, "when it comes to new Texas residents, what was their initial origin?".
+        </p>
+
+
+        <iframe title="Texas Migration Inflows, 2019-2024" aria-label="Split Bars" id="datawrapper-chart-Fvpy7"
+            src="https://datawrapper.dwcdn.net/Fvpy7/6/" scrolling="no" frameborder="0"
+            style="width: 0; min-width: 100% !important; border: none;" height="672" data-external="1"></iframe>
+        <script
+            type="text/javascript">(function () { function e() { window.addEventListener(`message`, function (e) { if (e.data[`datawrapper-height`] !== void 0) { var t = document.querySelectorAll(`iframe`); for (var n in e.data[`datawrapper-height`]) for (var r = 0, i; i = t[r]; r++)if (i.contentWindow === e.source) { var a = e.data[`datawrapper-height`][n] + `px`; i.style.height = a } } }) } e() })();</script>
+
+
+        <p>
+            The above chart illustrates migration inflows to Texas from 2019-2024, specifically the top 10 origins per
+            year. Migration inflows in this context refers to people who move from their prior location 1 year earlier
+            to Texas. This data was read and parsed directly from the US Census Bureau's excel spreadsheets. Data from
+            2020 was not available; my assumption is that this is due to the COVID-19 pandemic that was happening at
+            that time. The data shows that many new Texas residents are actually originating from outside of the United
+            States. Throughout all years, California, Florida and Louisiana are popular original origins.
+        </p>
+
+        <p>
+            While this data answered broadly where people are "coming from" to Texas, I wanted to understand origins on
+            a deeper level. I wanted to contextualize it what I've been discussing throughout this non-journalism story.
+            Where were people coming from, and ending up in Tarrant County, or even Arlington? The Census actually
+            maintains county-to-county migration flows and this data would prove critical is answering this question.
+        </p>
+
+        <iframe title="Tarrant County Inflows, 2016-2020" aria-label="Table" id="datawrapper-chart-ZSPFe"
+            src="https://datawrapper.dwcdn.net/ZSPFe/1/" scrolling="no" frameborder="0"
+            style="width: 0; min-width: 100% !important; border: none;" height="533" data-external="1"></iframe>
+        <script
+            type="text/javascript">(function () { function e() { window.addEventListener(`message`, function (e) { if (e.data[`datawrapper-height`] !== void 0) { var t = document.querySelectorAll(`iframe`); for (var n in e.data[`datawrapper-height`]) for (var r = 0, i; i = t[r]; r++)if (i.contentWindow === e.source) { var a = e.data[`datawrapper-height`][n] + `px`; i.style.height = a } } }) } e() })();</script>
+
+
+        <p>
+            This data was fascinating to me. Growing up in what I considered a boring town, leading a normal adolescent
+            existence, it never occurred to me that people would intentionally move to Arlington. I had no
+            choice--instead I had parents that decided were moving from upstate New York to Texas when I was 10 years
+            old. And that was that. The below simple little map came to mind while parsing this data. It visualizes the
+            Tarrant County inflows. The orange dot is Arlington.
+        </p>
+
+        <div class="full-width-container">
+            <img src="1x/Artboard 1.png">
+
+        </div>
+
+        <p>
+            I speak with nostalgia about Arlington because every time I visit, I am reminded of growing up there, of
+            being a teenager there. I still feel 16 for a few moments where I'm there. Seeing this data forced me to
+            confront what Arlington and Tarrant County is right now, not just was 30 years ago. It was very interesting
+            to see and parse the data and to visualize, however poorly, an evolution of sorts.
+
+
+        </p>
+
+    </div>
+    <main id="outro">
+        <div class="outro-div"></div>
+    </main>
+
+
+    <!-- Scrollama library (this URL actually loads the build) -->
+    <script src="https://unpkg.com/scrollama"></script>
+
+    <!-- Animation script -->
+    <script>
+        var container = document.querySelector("#scrolly-container");
+        var steps = container.querySelectorAll(".step");
+        var images = container.querySelectorAll(".scrolly-img");
+
+        var scroller = scrollama();
+
+        function handleStepEnter(response) {
+            steps.forEach(function (step) {
+                step.classList.remove('is-active');
+            });
+            response.element.classList.add('is-active');
+
+            images.forEach(function (img) {
+                img.classList.remove('show-image');
+            });
+
+            var currentImage = container.querySelector('.img-' + (response.index + 1));
+            if (currentImage) {
+                currentImage.classList.add('show-image');
+            }
+        }
+
+        function init() {
+            scroller
+                .setup({
+                    step: "#scrolly-container article .step",
+                    offset: 0.5,
+                    debug: false
+                })
+                .onStepEnter(handleStepEnter);
+
+            scroller.resize();
+        }
+
+        window.addEventListener("load", init);
+        window.addEventListener("resize", function () { scroller.resize(); });
+    </script>
+    </div>
+</body>
+
+</html>
