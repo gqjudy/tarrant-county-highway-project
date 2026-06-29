@@ -1,5 +1,5 @@
 # Tarrant County Highway Project
-Project 1 for LEDE
+### Project 1 for LEDE
 
 What to say about this project??? I want to first say that I will go back and edit this but right now, at 8:31 AM CST on the Monday after the Sunday when this project was technically "due", I just want to quickly jot down some initial thoughts. 
 
